@@ -18,16 +18,16 @@ def get_args() -> Namespace:
 def main() -> None:
     args = get_args()
 
-    #inputs = np.array(
-        #list(
-        #    map(
-        #        lambda x: TIMEFRAMES.index(x),
-        #        args.timeframe
-        #    )
-        #)
-    #).reshape(-1, 1)
+    inputs = np.array(
+        list(
+            map(
+                lambda x: TIMEFRAMES.index(x),
+                args.timeframe
+            )
+        )
+    ).reshape(-1, 1)
 
-    inputs = np.linspace(0,24,100).reshape(-1, 1)
+    #inputs = np.linspace(0,24,100).reshape(-1, 1)
 
     model = pickle.load(open(MODEL_NAME, "rb"))
 
